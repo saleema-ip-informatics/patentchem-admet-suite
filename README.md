@@ -31,15 +31,15 @@ Most ADMET predictors treat molecules as isolated data points. This pipeline int
  --- 
 ## 🎯 Why This Project Matters for Recruiters
 
-| Signal | What It Shows |
+| Area | Demonstrated Skill |
 |---|---|
-| ChEMBL real bioactivity data | No toy datasets — production-grade data handling |
-| 7-model ML comparison | Breadth across classical → deep learning |
-| Markush Analysis module | Unique IP-domain expertise, not replicable by generic ML candidates |
-| RDKit molecular descriptors + fingerprints | Core cheminformatics competency |
-| PyTorch neural net from scratch | Willingness to grow beyond domain comfort zone |
-| Modular Python architecture | Software engineering discipline |
-| Interpretability layer (SHAP + feature importance) | Pharma-grade explainability mindset |
+| Real ChEMBL bioactivity data | Production-style scientific data handling |
+| Multiple ML models | Classical ML + deep learning exposure |
+| Markush analysis module | Patent informatics + cheminformatics integration |
+| RDKit descriptors & fingerprints | Core cheminformatics competency |
+| PyTorch neural network | Deep learning implementation |
+| Modular project structure | Clean software engineering practices |
+| Feature importance analysis | Model interpretability mindset |
 
 ---
 
