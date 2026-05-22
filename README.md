@@ -102,6 +102,7 @@ patentchem-admet-suite/
 # Real data pull — no synthetic data
 import requests
 import pandas as pd
+import os
 
 BASE_URL = "https://www.ebi.ac.uk/chembl/api/data"
 
@@ -122,6 +123,13 @@ def fetch_egfr_bioactivity(limit=1000):
 
 df_raw = fetch_egfr_bioactivity(limit=2000)
 print(f"Fetched {len(df_raw)} bioactivity records for EGFR")
+# Create folders automatically
+os.makedirs("data/raw", exist_ok=True)
+
+# Save CSV file
+df_raw.to_csv("data/raw/egfr_ic50_raw.csv", index=False)
+
+print("CSV file saved successfully!")
 ```
 
 ---
