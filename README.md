@@ -22,7 +22,13 @@ This project builds an end-to-end **ADMET (Absorption, Distribution, Metabolism,
 Most ADMET predictors treat molecules as isolated data points. This pipeline integrates **patent Markush awareness** — identifying scaffold families, R-group variation zones, and structurally claimed regions — giving it context that pure ML pipelines lack entirely.
 
 ---
+## 🎯 What This Demonstrates
+- Real-world cheminformatics workflow
+- Patent + AI integration
+- Production-style ML pipeline
+- Transition into computational drug discovery
 
+ --- 
 ## 🎯 Why This Project Matters for Recruiters
 
 | Signal | What It Shows |
