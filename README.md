@@ -122,6 +122,10 @@ print(f"Fetched {len(df_raw)} bioactivity records for EGFR")
 
 ## 🏗️ Pipeline — Step by Step
 
+## 🖼️ Workflow Diagram
+
+![Workflow](results/figures/workflow.png)
+
 
 ### STEP 1 — Data Collection & Cleaning (Pandas + NumPy)
 
