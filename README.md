@@ -83,8 +83,7 @@ patentchem-admet-suite/
 ```
 🖼️ Workflow Diagram
 
-![Workflow](results/figures/workflow.png)
-
+![Workflow](https://raw.githubusercontent.com/saleema-ip-informatics/patentchem-admet-suite/main/results/figures/workflow.png)
 
 
 ---
