@@ -59,11 +59,10 @@ patentchem-admet-suite/
 ├── requirements.txt
 │
 ├── data/
-│   ├── raw/                           ← ChEMBL raw API pull
 │   └── processed/                     ← Cleaned datasets + feature matrices
 │
 ├── notebooks/
-│   ├── 01_data_collection.ipynb       ← ChEMBL API + preprocessing
+│   ├── 01_data_collection.ipynb       ← ChEMBL API pull + IC50 preprocessing
 │   ├── 02_molecular_features.ipynb    ← RDKit descriptors + fingerprints
 │   ├── 03_markush_analysis.ipynb      ← Patent scaffold decomposition
 │   ├── 04_classical_models.ipynb      ← Ridge, Lasso, ElasticNet, SVM
@@ -82,6 +81,12 @@ patentchem-admet-suite/
     ├── metrics/
     └── figures/
 ```
+🖼️ Workflow Diagram
+
+![Workflow](results/figures/workflow.png)
+
+
+
 ---
 
 ## ⚙️ Quickstart
