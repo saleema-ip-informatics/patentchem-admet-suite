@@ -1,4 +1,4 @@
-# patentchem-admet-suite
+# 🧬 PatentChem ADMET Intelligence Suite
 End-to-end QSAR pipeline combining 15 years of patent Markush expertise with RF, SVM, and PyTorch — real ChEMBL EGFR data
 # 🧬 PatentChem ADMET Intelligence Suite
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
