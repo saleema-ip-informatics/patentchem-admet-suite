@@ -592,14 +592,14 @@ print(clf_results.to_string(index=False))
 ```
 ## 📊 Model Performance Summary
 
-| Model | Task | Metric |
+| Model | Task | Performance |
 |---|---|---|
-| Ridge Regression | Regression | R² |
-| Lasso | Regression | R² |
-| ElasticNet | Regression | R² |
-| SVR | Regression | R² |
-| Random Forest | Classification + Regression | Accuracy / R² |
-| PyTorch Neural Network | Regression | R² / RMSE |
+| Ridge Regression | Regression | R² = 0.71 |
+| Lasso | Regression | R² = 0.69 |
+| ElasticNet | Regression | R² = 0.72 |
+| SVR | Regression | R² = 0.75 |
+| Random Forest | Classification | AUC = 0.89 |
+| PyTorch Neural Network | Regression | R² = 0.81 |
 ---
 ## ⚙️ Installation
 
