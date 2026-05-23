@@ -62,30 +62,47 @@ Interpretability : sklearn feature_importances_, SHAP-style manual analysis
 ```
 patentchem-admet-suite/
 │
-├── README.md                          ← This file
+├── README.md
 ├── requirements.txt
+│
 ├── data/
 │   ├── raw/                           ← ChEMBL raw API pull
-│   └── processed/                     ← Cleaned, featurized datasets
+│   └── processed/                     ← Cleaned datasets + feature matrices
 │
 ├── notebooks/
-│   ├── 01_data_collection.ipynb       ← ChEMBL API, Pandas cleaning
+│   ├── 01_data_collection.ipynb       ← ChEMBL API + preprocessing
 │   ├── 02_molecular_features.ipynb    ← RDKit descriptors + fingerprints
-│   ├── 03_markush_analysis.ipynb      ← Patent scaffold decomposition (UNIQUE MODULE)
-│   ├── 04_classical_models.ipynb      ← Ridge, Lasso, SVM
-│   ├── 05_random_forest_qsar.ipynb    ← RF + feature importance
-│   └── 06_pytorch_nn.ipynb            ← Neural network baseline
+│   ├── 03_markush_analysis.ipynb      ← Patent scaffold decomposition
+│   ├── 04_classical_models.ipynb      ← Ridge, Lasso, ElasticNet, SVM
+│   ├── 05_random_forest_qsar.ipynb    ← Random Forest + feature importance
+│   └── 06_pytorch_nn.ipynb            ← Deep learning QSAR benchmark
 │
 ├── src/
 │   ├── data_loader.py
 │   ├── featurizer.py
-│   ├── markush_analyzer.py            ← Core patent-IP module
+│   ├── markush_analyzer.py
 │   ├── models.py
 │   └── evaluator.py
 │
 └── results/
     ├── model_comparison.csv
+    ├── metrics/
     └── figures/
+```
+## Results & Outputs
+
+Generated outputs include:
+- QSAR model comparison tables
+- Feature importance visualizations
+- Processed molecular feature matrices
+- PyTorch training metrics
+- Random Forest explainability outputs
+
+Stored under:
+```text
+data/processed/
+results/metrics/
+results/figures/
 ```
 
 ---
