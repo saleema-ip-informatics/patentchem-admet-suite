@@ -102,7 +102,6 @@ patentchem-admet-suite/
 # Real data pull — no synthetic data
 import requests
 import pandas as pd
-import os
 
 BASE_URL = "https://www.ebi.ac.uk/chembl/api/data"
 
