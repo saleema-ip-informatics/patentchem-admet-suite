@@ -590,8 +590,28 @@ results.to_csv("results/model_comparison.csv", index=False)
 print(results.to_string(index=False))
 print(clf_results.to_string(index=False))
 ```
+## 📊 Model Performance Summary
 
+| Model | Task | Metric |
+|---|---|---|
+| Ridge Regression | Regression | R² |
+| Lasso | Regression | R² |
+| ElasticNet | Regression | R² |
+| SVR | Regression | R² |
+| Random Forest | Classification + Regression | Accuracy / R² |
+| PyTorch Neural Network | Regression | R² / RMSE |
 ---
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/saleema-ip-inofirmatics/patentchem-admet-suite.git
+
+cd patentchem-admet-suite
+
+pip install -r requirements.txt
+```
+
+
 
 ## 📋 Requirements
 
