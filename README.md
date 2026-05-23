@@ -577,31 +577,6 @@ print(clf_results.to_string(index=False))
 
 ---
 
-## 💡 LinkedIn Post (Copy-Ready)
-
-```
-🔬 Just published my latest cheminformatics project on GitHub:
-
-"PatentChem ADMET Intelligence Suite"
-→ EGFR inhibitor activity prediction with 7 ML models
-→ Ridge, Lasso, ElasticNet, SVM, Random Forest, PyTorch NN
-→ Built on real ChEMBL bioactivity data (~2,000 compounds)
-→ Includes a Markush Structure Analysis module informed by
-  15 years of pharmaceutical patent analysis
-
-The module I'm most proud of: R-group decomposition using RDKit
-to identify substituent variation zones — the same scaffold
-analysis that underlies patent Markush claims, now connected
-to computational QSAR.
-
-🔗 [GitHub link]
-
-#Cheminformatics #DrugDiscovery #MachineLearning #QSAR
-#PatentAnalysis #RDKit #PyTorch #OpenSource
-```
-
----
-
 ## 📋 Requirements
 
 ```
