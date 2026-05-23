@@ -81,7 +81,7 @@ patentchem-admet-suite/
     ├── metrics/
     └── figures/
 ```
-🖼️ Workflow Diagram
+## 🖼️ Workflow Diagram
 
 ![Workflow](https://raw.githubusercontent.com/saleema-ip-informatics/patentchem-admet-suite/main/results/figures/workflow.png)
 
@@ -91,7 +91,7 @@ patentchem-admet-suite/
 ## ⚙️ Quickstart
 
 ```bash
-git clone https://github.com/saleema-ip-inofirmatics/patentchem-admet-suite.git
+git clone https://github.com/saleema-ip-informatics/patentchem-admet-suite.git
 cd patentchem-admet-suite
 pip install -r requirements.txt
 ```
