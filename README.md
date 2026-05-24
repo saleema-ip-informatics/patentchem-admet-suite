@@ -70,6 +70,7 @@ patentchem-admet-suite/
 │   └── 06_pytorch_nn.ipynb            ← Deep learning QSAR benchmark
 │
 ├── src/
+│   ├── __init__.py
 │   ├── data_loader.py
 │   ├── featurizer.py
 │   ├── markush_analyzer.py
