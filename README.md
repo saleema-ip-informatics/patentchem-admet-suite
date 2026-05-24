@@ -19,7 +19,7 @@ An end-to-end **ADMET prediction pipeline** for drug discovery, enriched with a 
 
 Most ADMET predictors treat molecules as isolated data points. This pipeline integrates **patent Markush awareness** — identifying scaffold families, R-group variation zones, and structurally claimed regions — giving it context that pure ML pipelines lack entirely.
 
-**Target:** EGFR Kinase (ChEMBL ID: CHEMBL203) · ~2,000–4,000 compounds · IC50 from ChEMBL v33
+**Target:** EGFR Kinase (ChEMBL ID: CHEMBL203) · ~1,000 compounds · IC50 from ChEMBL v33
 
 ---
 ## 🎯 What This Demonstrates
