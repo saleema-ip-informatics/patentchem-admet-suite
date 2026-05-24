@@ -111,9 +111,7 @@ Then run the notebooks in order (01 → 06) from the `notebooks/` directory.
 | Ridge Regression | Regression | R² = 0.71 |
 | Lasso | Regression | R² = 0.69 |
 | Random Forest | Classification | AUC-ROC = 0.89 |
-| SVM Classifier | Classification | Accuracy = — · AUC-ROC = — |
-
-> Fill in SVM classifier metrics after running `04_classical_models.ipynb`.
+| SVM Classifier | Classification | Accuracy = 0.908 · AUC-ROC = 0.955 
 
 ---
 
