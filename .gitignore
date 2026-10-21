@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Database (too large for GitHub)
+db/patents.db
+data/processed/*.csv
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Virtual environment
+venv/
+env/
+.venv-mlops/
+mlflow.db
+mlflow.db-*
+mlruns/
+mlops/artifacts/
+*.bak
