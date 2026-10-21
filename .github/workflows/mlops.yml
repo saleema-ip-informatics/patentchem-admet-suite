@@ -65,6 +65,18 @@ jobs:
       - name: Test API
         run: python -m pytest mlops/test_api.py -q
 
+      - name: Upload training evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: egfr-training-evidence
+          path: |
+            mlops/artifacts/runs/*/metrics.json
+            mlops/artifacts/runs/*/data_manifest.json
+            mlops/artifacts/runs/*/environment.json
+            mlops/artifacts/runs/*/split_assignments.csv
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Show container logs and clean up
         if: always()
         run: |
