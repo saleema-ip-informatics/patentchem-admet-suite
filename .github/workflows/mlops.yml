@@ -65,6 +65,31 @@ jobs:
       - name: Test API
         run: python -m pytest mlops/test_api.py -q
 
+      - name: Build SageMaker container
+        run: |
+          docker build -f mlops/Dockerfile.sagemaker \
+            --build-arg RUN_ID="$EXPECTED_RUN_ID" \
+            -t egfr-sagemaker:ci .
+
+      - name: Start SageMaker container and wait for readiness
+        run: |
+          docker run -d --name egfr-sm-ci \
+            -p 127.0.0.1:8002:8080 egfr-sagemaker:ci serve
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8002/ping > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs egfr-sm-ci
+          exit 1
+
+      - name: Test SageMaker inference and health
+        env:
+          API_URL: http://127.0.0.1:8002/invocations
+          HEALTH_URL: http://127.0.0.1:8002/ping
+        run: python -m pytest mlops/test_api.py -q
+
       - name: Upload training evidence
         uses: actions/upload-artifact@v4
         with:
@@ -82,3 +107,5 @@ jobs:
         run: |
           docker logs egfr-ci || true
           docker rm -f egfr-ci || true
+          docker logs egfr-sm-ci || true
+          docker rm -f egfr-sm-ci || true

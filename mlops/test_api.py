@@ -4,7 +4,7 @@ import urllib.request
 import urllib.error
 import pytest
 
-URL = "http://127.0.0.1:8001/predict"
+URL = os.environ.get("API_URL", "http://127.0.0.1:8001/predict")
 
 
 def post(smiles):
@@ -42,3 +42,11 @@ def test_invalid_smiles():
     status, body = post("invalid")
     assert status == 422
     assert body["detail"] == "Enter a valid, non-empty molecular SMILES."
+
+
+def test_health_endpoint():
+    health_url = os.environ.get("HEALTH_URL")
+    if not health_url:
+        pytest.skip("Health check applies to the SageMaker adapter.")
+    with urllib.request.urlopen(health_url, timeout=30) as response:
+        assert response.status == 200
