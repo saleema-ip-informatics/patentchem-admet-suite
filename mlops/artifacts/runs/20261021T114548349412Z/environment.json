@@ -1,0 +1,10 @@
+{
+  "python": "3.14.3",
+  "packages": {
+    "rdkit": "2026.9.1",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}

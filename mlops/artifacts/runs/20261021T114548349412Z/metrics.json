@@ -1,0 +1,16 @@
+{
+  "models": {
+    "Mean baseline": {
+      "MAE": 1.376100370152351,
+      "RMSE": 1.4165269006497452,
+      "units": "pIC50"
+    },
+    "Random Forest": {
+      "MAE": 0.8796186052232853,
+      "RMSE": 1.2389206878620298,
+      "units": "pIC50"
+    }
+  },
+  "test_records": 4,
+  "limitation": "Small holdout; learning demonstration only."
+}

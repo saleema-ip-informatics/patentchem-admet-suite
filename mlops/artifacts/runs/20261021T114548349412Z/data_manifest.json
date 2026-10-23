@@ -1,0 +1,11 @@
+{
+  "source_file": "data/processed/egfr_ic50_raw.csv",
+  "sha256": "7a7d0aed60bab2dbb66e0115b0d804608f47dd10a173083e12feb81100229677",
+  "assay_id": "CHEMBL679944",
+  "target": "pIC50",
+  "training_records": 38,
+  "testing_records": 4,
+  "split_method": "scaffold_group_shuffle",
+  "random_state": 42,
+  "purpose": "MLOps learning demonstration"
+}
