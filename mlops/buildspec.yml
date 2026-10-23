@@ -36,3 +36,32 @@ phases:
     finally:
       - docker logs egfr-codebuild || true
       - docker rm -f egfr-codebuild || true
+
+  post_build:
+    commands:
+      - |
+        set -eu
+        if [ "$CODEBUILD_BUILD_SUCCEEDING" != "1" ]; then
+          echo "Build or tests failed; skipping publication."
+          exit 1
+        fi
+
+        REGISTRY="628160382840.dkr.ecr.ap-southeast-2.amazonaws.com"
+        BUILD_UUID="${CODEBUILD_BUILD_ID##*:}"
+        IMAGE_TAG="build-${CODEBUILD_BUILD_NUMBER}-${BUILD_UUID}"
+        IMAGE_URI="$REGISTRY/egfr-qsar:$IMAGE_TAG"
+
+        aws ecr get-login-password --region ap-southeast-2 |
+          docker login --username AWS --password-stdin "$REGISTRY"
+
+        docker tag egfr-sagemaker:codebuild "$IMAGE_URI"
+        docker push "$IMAGE_URI"
+
+        aws ecr batch-get-image \
+          --repository-name egfr-qsar \
+          --image-ids imageTag="$IMAGE_TAG" \
+          --region ap-southeast-2 \
+          --query 'images[0].{Digest:imageId.imageDigest,MediaType:imageManifestMediaType}' \
+          --output json
+
+        echo "Published image $IMAGE_URI"
