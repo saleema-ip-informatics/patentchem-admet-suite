@@ -1,0 +1,5 @@
+FROM egfr-qsar:20261021
+COPY mlops/sagemaker_api.py /app/sagemaker_api.py
+EXPOSE 8080
+ENTRYPOINT ["python", "/app/sagemaker_api.py"]
+CMD []
