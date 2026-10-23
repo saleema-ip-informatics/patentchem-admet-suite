@@ -1,0 +1,38 @@
+version: 0.2
+
+env:
+  variables:
+    EXPECTED_RUN_ID: "20261021T114548349412Z"
+    API_URL: "http://127.0.0.1:8002/invocations"
+    HEALTH_URL: "http://127.0.0.1:8002/ping"
+
+phases:
+  install:
+    commands:
+      - python3 -m pip install pytest==9.1.1
+
+  pre_build:
+    commands:
+      - docker info
+
+  build:
+    commands:
+      - docker build --platform linux/amd64 --provenance=false -f mlops/Dockerfile.sagemaker --build-arg RUN_ID="$EXPECTED_RUN_ID" -t egfr-sagemaker:codebuild .
+      - docker run -d --name egfr-codebuild -p 127.0.0.1:8002:8080 egfr-sagemaker:codebuild serve
+      - |
+        ready=false
+        for attempt in $(seq 1 30); do
+          if curl --fail --silent "$HEALTH_URL" > /dev/null; then
+            ready=true
+            break
+          fi
+          sleep 2
+        done
+        if [ "$ready" != "true" ]; then
+          docker logs egfr-codebuild
+          exit 1
+        fi
+      - python3 -m pytest mlops/test_api.py -q
+    finally:
+      - docker logs egfr-codebuild || true
+      - docker rm -f egfr-codebuild || true
